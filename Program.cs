@@ -6,6 +6,7 @@ registeredBands.Add("The Beatles", new List<int>());
 void showMenu()
 {
     Console.Clear();
+    // logo generated with https://fsymbols.com/pt/geradores/
     Console.WriteLine(@"
 
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗  ░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
