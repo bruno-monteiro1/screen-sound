@@ -2,8 +2,10 @@
 registeredBands.Add("Linkin Park", new List<int> { 10, 8, 6 });
 registeredBands.Add("The Beatles", new List<int>());
 
-void showLogoAndGreeting()
+
+void showMenu()
 {
+    Console.Clear();
     Console.WriteLine(@"
 
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗  ░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
@@ -15,11 +17,7 @@ void showLogoAndGreeting()
 ");
     Console.WriteLine("Welcome to Screen Sound!");
 
-}
 
-void showMenu()
-{
-    showLogoAndGreeting();
     Console.WriteLine("1 - Register a band");
     Console.WriteLine("2 - Show all bands");
     Console.WriteLine("3 - Rate a band");
@@ -62,7 +60,6 @@ void registerBand()
     registeredBands.Add(bandName, new List<int>());
     Console.WriteLine($"Band {bandName} succesfully registered!");
     Thread.Sleep(4000);
-    Console.Clear();
     showMenu();
 }
 
@@ -79,7 +76,6 @@ void showRegisteredBands()
 
     Console.WriteLine("\nPress any key to go back to main menu");
     Console.ReadKey();
-    Console.Clear();
     showMenu();
 
 }
@@ -106,7 +102,6 @@ void rateBand()
         registeredBands[bandName].Add(score);
         Console.WriteLine($"\nScore {score} succesfully registered to the band {bandName}");
         Thread.Sleep(2000);
-        Console.Clear();
         showMenu();
     }
     else
@@ -114,7 +109,6 @@ void rateBand()
         Console.WriteLine($"\nBand {bandName} not found!");
         Console.WriteLine("Press any key to go back to main menu");
         Console.ReadKey();
-        Console.Clear();
         showMenu();
     }
 
@@ -132,7 +126,6 @@ void showAverageScore()
         Console.WriteLine($"\nThe avergage score for {bandName} is {bandScores.Average()}.");
         Console.WriteLine("Press any key to go back to main menu");
         Console.ReadKey();
-        Console.Clear();
         showMenu();
 
     }
@@ -141,7 +134,6 @@ void showAverageScore()
         Console.WriteLine($"\nBand {bandName} not found or has no rating yet!");
         Console.WriteLine("Press any key to go back to main menu");
         Console.ReadKey();
-        Console.Clear();
         showMenu();
     }
 }
