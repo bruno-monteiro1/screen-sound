@@ -125,7 +125,7 @@ void showAverageScore()
     showOptionTitle("Exibir média da banda");
     Console.Write("Digite o nome da banda que deseja exibir a média: ");
     string bandName = Console.ReadLine()!;
-    if (registeredBands.ContainsKey(bandName))
+    if (registeredBands.ContainsKey(bandName) && registeredBands[bandName].Count() > 0)
     {
         List<int> bandScores = registeredBands[bandName];
         Console.WriteLine($"\nA média da banda {bandName} é {bandScores.Average()}.");
@@ -137,7 +137,7 @@ void showAverageScore()
     }
     else
     {
-        Console.WriteLine($"\nA banda {bandName} não foi encontrada!");
+        Console.WriteLine($"\nA banda {bandName} não foi encontrada ou não possui avaliaçõs");
         Console.WriteLine("Digite uma tecla para voltar ao menu principal");
         Console.ReadKey();
         Console.Clear();
