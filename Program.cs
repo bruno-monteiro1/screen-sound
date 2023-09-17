@@ -58,8 +58,10 @@ void registerBand()
     Console.Write("Type the name of the band you want to register: ");
     string bandName = Console.ReadLine()!;
     registeredBands.Add(bandName, new List<int>());
+    Console.Clear();
     Console.WriteLine($"Band {bandName} succesfully registered!");
-    Thread.Sleep(4000);
+    Console.WriteLine("\nPress any key to go back to main menu");
+    Console.ReadKey();
     showMenu();
 }
 
@@ -100,12 +102,15 @@ void rateBand()
         Console.Write($"Type the score you want to give {bandName}: ");
         int score = int.Parse(Console.ReadLine()!);
         registeredBands[bandName].Add(score);
+        Console.Clear();
         Console.WriteLine($"\nScore {score} succesfully registered to the band {bandName}");
-        Thread.Sleep(2000);
+        Console.WriteLine("\nPress any key to go back to main menu");
+        Console.ReadKey();
         showMenu();
     }
     else
     {
+        Console.Clear();
         Console.WriteLine($"\nBand {bandName} not found!");
         Console.WriteLine("Press any key to go back to main menu");
         Console.ReadKey();
